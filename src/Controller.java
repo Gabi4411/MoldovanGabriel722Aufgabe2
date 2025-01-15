@@ -172,4 +172,31 @@ public class Controller {
             }
         }
     }
+
+//    public void sortMedikamentenPatient() {
+//        Scanner sc = new Scanner(System.in);
+//        System.out.println("Name: ");
+//        String name = sc.nextLine();
+//        sc.nextLine();
+//        Patienten patient;
+//        for (Patienten p : patientenRepository.getAllElements()) {
+//            if(p.getName().equals(name)){
+//                int index = patientenRepository.getAllElements().indexOf(p);
+//                patient = patientenRepository.getElement(index);
+//            }
+//        }
+//        sc.nextLine();
+//        System.out.println("How do you want the list to be sorted? 1 - Ascending, 2 - Descending");
+//        int how = sc.nextInt();
+//        List<String> medikaments = patient.getMedikamenten();
+//
+//        medikaments.sort();
+//
+//        if(how == 1) {
+//            return medikaments;
+//        }
+//        else {
+//            return medikaments.reversed();
+//        }
+//    }
 }
