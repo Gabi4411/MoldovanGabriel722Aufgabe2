@@ -76,7 +76,7 @@ public class Controller {
                 break;
             }
         }
-        System.out.println("Patient: " + patientenRepository.getElement(id))
+        System.out.println("Patient: " + patientenRepository.getElement(id));
     }
 
     public void getMedikamente() {
@@ -91,7 +91,7 @@ public class Controller {
                 break;
             }
         }
-        System.out.println("Medikament: " + medikamentenRepository.getElement(id))
+        System.out.println("Medikament: " + medikamentenRepository.getElement(id));
     }
 
     public void updatePatient() {
@@ -120,6 +120,7 @@ public class Controller {
                 p.setAlter(alter);
                 p.setDiagnose(diagnose);
                 p.setMedikamenten(medikamenten);
+                patientenRepository.updateElement(index, patientenRepository.getElement(index));
                 break;
             }
         }
@@ -127,19 +128,46 @@ public class Controller {
 
     public void updateMedikament() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Name: ");
+        System.out.println("Name for Medikament you want to update: ");
         String name = sc.nextLine();
         System.out.println("Preis: ");
         int preis = sc.nextInt();
         System.out.println("Krankenheit: ");
         String krankenheit = sc.nextLine();
         sc.nextLine();
+
+        for (Medikamenten m : medikamentenRepository.getAllElements()) {
+            if(m.getName().equals(name)) {
+                int index = medikamentenRepository.getAllElements().indexOf(m);
+                m.setKrankheit(krankenheit);
+                m.setPreis(preis);
+                medikamentenRepository.updateElement(index, medikamentenRepository.getElement(index));
+                break;
+            }
+        }
     }
 
-    public void deleteProdukt(String name){
-        for (Produkt p : produktRepository.getAllElements()){
-            if (p.getName().equals(name)){
-                produktRepository.remove(p);
+    public void deletePatient() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Name: ");
+        String name = sc.nextLine();
+        sc.nextLine();
+        for (Patienten p : patientenRepository.getAllElements()) {
+            if(p.getName().equals(name)){
+                patientenRepository.remove(p);
+                break;
+            }
+        }
+    }
+
+    public void deleteMedikamente() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Name: ");
+        String name = sc.nextLine();
+        sc.nextLine();
+        for (Medikamenten m : medikamentenRepository.getAllElements()) {
+            if(m.getName().equals(name)){
+                medikamentenRepository.remove(m);
                 break;
             }
         }
