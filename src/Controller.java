@@ -203,6 +203,21 @@ public class Controller {
     }
 
     public void sortBy() {
-        System.out.println("nothing");
+        Scanner scanner  = new Scanner(System.in);
+        System.out.print("Name: ");
+        String name = scanner.nextLine();
+        System.out.println("Sort by asc - 1, desc - 2? ");
+        int option = scanner.nextInt();
+        if(option == 1) {
+            charakterenRepository.getAllElements().stream()
+                    .filter(c -> c.getName().equals(name))
+                    .sorted((c1, c2) -> c1.getGekauftenProdukte().size() - c2.getGekauftenProdukte().size())
+                    .forEach(c -> System.out.println(c.getName() + " " + c.getGekauftenProdukte().size()));
+        } else {
+            charakterenRepository.getAllElements().stream()
+                    .filter(c -> c.getName().equals(name))
+                    .sorted((c1, c2) -> c2.getGekauftenProdukte().size() - c1.getGekauftenProdukte().size())
+                    .forEach(c -> System.out.println(c.getName() + " " + c.getGekauftenProdukte().size()));
+        }
     }
 }
