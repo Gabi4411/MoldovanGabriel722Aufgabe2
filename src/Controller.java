@@ -179,11 +179,27 @@ public class Controller {
 
     //Filters and sorting
     public void filterBy() {
-        System.out.println("nothing");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Region: ");
+        String region = scanner.nextLine();
+        for(Charakteren c : charakterenRepository.getAllElements()) {
+            if(c.getRegion().equals(region)) {
+                System.out.println(c.getName());
+            }
+        }
     }
 
     public void filterBy1() {
-        System.out.println("nothing");
+        Scanner scanner  = new Scanner(System.in);
+        System.out.print("Universum: ");
+        String universum = scanner.nextLine();
+        for(Charakteren c : charakterenRepository.getAllElements()) {
+            for(String s : c.getGekauftenProdukte()) {
+                if(s.equals(universum)) {
+                    System.out.println(c.getName());
+                }
+            }
+        }
     }
 
     public void sortBy() {

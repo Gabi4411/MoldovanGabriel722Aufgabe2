@@ -65,8 +65,8 @@ public class UI {
                 3. Show
                 4. Update
                 5. Delete
-                6. Filter by
-                7. Filter by
+                6. Filter by region
+                7. Filter by universe
                 8. Sort by
                 0. Exit""");
 

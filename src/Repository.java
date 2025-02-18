@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.*;
 
 public class Repository<T> {
     private List<T> repository;
