@@ -200,12 +200,12 @@ public class Controller {
             charakterenRepository.getAllElements().stream()
                     .filter(c -> c.getName().equals(name))
                     .sorted((c1, c2) -> c1.getGekauftenProdukte().size() - c2.getGekauftenProdukte().size())
-                    .forEach(c -> System.out.println(c.getName() + " " + c.getGekauftenProdukte().size()));
+                    .forEach(c -> System.out.println(c.getName() + " " + c.getGekauftenProdukte()));
         } else {
             charakterenRepository.getAllElements().stream()
                     .filter(c -> c.getName().equals(name))
                     .sorted((c1, c2) -> c2.getGekauftenProdukte().size() - c1.getGekauftenProdukte().size())
-                    .forEach(c -> System.out.println(c.getName() + " " + c.getGekauftenProdukte().size()));
+                    .forEach(c -> System.out.println(c.getName() + " " + c.getGekauftenProdukte()));
         }
     }
 }
