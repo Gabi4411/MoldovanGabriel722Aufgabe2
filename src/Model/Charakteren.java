@@ -1,12 +1,13 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Charakteren {
     int id;
     String name;
     String region;
-    ArrayList<String> gekauftenProdukte;
+    List<String> gekauftenProdukte;
 
     public Charakteren(int id, String name, String region) {
         this.id = id;
@@ -39,11 +40,11 @@ public class Charakteren {
         this.region = region;
     }
 
-    public ArrayList<String> getGekauftenProdukte() {
+    public List<String> getGekauftenProdukte() {
         return gekauftenProdukte;
     }
 
-    public void setGekauftenProdukte(ArrayList<String> gekauftenProdukte) {
+    public void setGekauftenProdukte(List<String> gekauftenProdukte) {
         this.gekauftenProdukte = gekauftenProdukte;
     }
 
@@ -55,5 +56,9 @@ public class Charakteren {
                 ", region='" + region + '\'' +
                 ", gekauftenProdukte=" + gekauftenProdukte +
                 '}';
+    }
+
+    public void kaufeProduke(Produkten produkten) {
+        gekauftenProdukte.add(produkten.getName());
     }
 }

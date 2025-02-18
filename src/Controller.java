@@ -98,19 +98,19 @@ public class Controller {
         System.out.println("Region: ");
         String region = sc.nextLine();
 
-        List<String> produkts = new ArrayList<>();
-        while (true) {
-            String input = sc.nextLine();
+//        List<String> produkts = new ArrayList<>();
+//        while (true) {
+//            String input = sc.nextLine();
+//
+//            if (input.equals("Stop")) {
+//                break;
+//            }
+//
+//            produkts.add(input);
+//        }
+//        sc.nextLine();
 
-            if (input.equals("Stop")) {
-                break;
-            }
-
-            produkts.add(input);
-        }
-        sc.nextLine();
-
-        charakterenRepository.addElement(new Charakteren(id, name, region, produkts));
+        charakterenRepository.addElement(new Charakteren(id, name, region));
     }
 
     public void showAllObject2() {
